@@ -1,252 +1,152 @@
+# step-by-step guide to deploying a Non-Fungible Token (NFT) on zkSync Era using Hardhat. 
 
-# zkSync NFT Deployment Guide
+This guide assumes you have some basic knowledge of using Hardhat and Solidity.
 
-## Introduction
+### Step 1: Set Up Your Project
 
-This repository contains a step-by-step guide to deploying a Non-Fungible Token (NFT) on zkSync, a Layer 2 scaling solution for Ethereum. zkSync provides scalability and lower transaction costs while maintaining the security of the Ethereum mainnet.
-
-
-## Prerequisites
-
-- Node.js (v14 or later)
-- MetaMask
-- Hardhat
-- zkSync plugin for Hardhat
-
-## Setup Instructions
-
-### Step 1: Initialize the Project
-
-1. **Create a new directory for your project:**
-
+1. **Initialize your project:**
    ```bash
-   mkdir zknft
-   cd zknft
-   ```
-
-2. **Initialize a new Node.js project:**
-
-   ```bash
+   mkdir zksync-nft
+   cd zksync-nft
    npm init -y
    ```
 
-3. **Install Hardhat and zkSync plugin:**
-
+2. **Install Hardhat and other dependencies:**
    ```bash
-   npm install --save-dev hardhat @matterlabs/hardhat-zksync
+   npm install --save-dev hardhat
+   npm install --save-dev @nomiclabs/hardhat-ethers ethers
+   npm install --save-dev @matterlabs/hardhat-zksync-deploy @matterlabs/hardhat-zksync-solc
+   npm install --save-dev dotenv
    ```
 
-4. **Create a Hardhat project:**
-
+3. **Create a Hardhat project:**
    ```bash
    npx hardhat
    ```
-
-   Choose "Create a basic sample project" and follow the prompts.
+Select "Create a basic sample project."
 
 ### Step 2: Configure Hardhat for zkSync
 
-Modify the `hardhat.config.js` file to include zkSync configuration:
+1. **`hardhat.config.ts`:**
+   ```typescript
+   import { HardhatUserConfig } from "hardhat/types";
+   import "@nomiclabs/hardhat-ethers";
+   import "@matterlabs/hardhat-zksync-deploy";
+   import "@matterlabs/hardhat-zksync-solc";
+   import * as dotenv from "dotenv";
 
-```javascript
-require("@matterlabs/hardhat-zksync");
+   dotenv.config();
 
-module.exports = {
-  solidity: "0.8.18",
-  zksync: {
-    url: "https://rpc.zksync.io",
-    ethNetwork: "mainnet",
-    zksync: true,
-  },
-};
-```
+   const config: HardhatUserConfig = {
+     defaultNetwork: "zkSyncTestnet",
+     networks: {
+       zkSyncTestnet: {
+         url: "https://testnet.era.zksync.dev",
+         ethNetwork: "https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID", // Goerli testnet
+         zksync: true
+       }
+     },
+     solidity: {
+       version: "0.8.18"
+     },
+     zksolc: {
+       version: "1.3.5", // Example version
+       compilerSource: "binary",
+       settings: {}
+     }
+   };
 
-### Step 3: Create the NFT Smart Contract
+   export default config;
+   ```
 
-Create a new Solidity file `MyNFT.sol` inside the `contracts` directory:
+### Step 3: Write the NFT Smart Contract
 
-```solidity
-// contracts/MyNFT.sol
+1. **Create the NFT contract:**
 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.18;
+   Create a file named `NFT.sol` under the `contracts` directory:
+   ```solidity
+   // SPDX-License-Identifier: MIT
+   pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+   import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+   import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyNFT is ERC721, Ownable {
-    uint256 public tokenCounter;
+   contract MyNFT is ERC721, Ownable {
+       uint256 public tokenCounter;
 
-    constructor() ERC721("MyNFT", "MNFT") {
-        tokenCounter = 0;
-    }
+       constructor() ERC721("MyNFT", "NFT") {
+           tokenCounter = 0;
+       }
 
-    function createNFT(address recipient) public onlyOwner returns (uint256) {
-        _safeMint(recipient, tokenCounter);
-        tokenCounter += 1;
-        return tokenCounter;
-    }
-}
-```
+       function createNFT(address to) public onlyOwner returns (uint256) {
+           uint256 newTokenId = tokenCounter;
+           _safeMint(to, newTokenId);
+           tokenCounter++;
+           return newTokenId;
+       }
+   }
+   ```
 
-### Step 4: Write the Deployment Script
-
-Create a new file `deploy.js` inside the `scripts` directory:
-
-```javascript
-// scripts/deploy.js
-
-async function main() {
-  const [deployer] = await ethers.getSigners();
-  console.log("Deploying contracts with the account:", deployer.address);
-
-  const MyNFT = await ethers.getContractFactory("MyNFT");
-  const myNFT = await MyNFT.deploy();
-
-  console.log("MyNFT deployed to:", myNFT.address);
-}
-
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
-```
-
-### Step 5: Write the Interaction Script
-
-Create a new file `interact.js` inside the `scripts` directory:
-
-```javascript
-// scripts/interact.js
-
-const { ethers } = require("hardhat");
-
-async function main() {
-    const provider = new ethers.providers.JsonRpcProvider("https://rpc.zksync.io");
-    const wallet = new ethers.Wallet("YOUR_PRIVATE_KEY", provider);
-
-    const contractAddress = "YOUR_CONTRACT_ADDRESS";
-    const abi = [
-        "function createNFT(address recipient) public returns (uint256)",
-        "function tokenCounter() public view returns (uint256)"
-    ];
-
-    const contract = new ethers.Contract(contractAddress, abi, wallet);
-
-    // Mint a new NFT
-    const tx = await contract.createNFT(wallet.address);
-    await tx.wait();
-
-    // Get the total number of NFTs minted
-    const totalMinted = await contract.tokenCounter();
-    console.log("Total NFTs minted:", totalMinted.toString());
-}
-
-main();
-```
-
-### Step 6: Compile and Deploy the Contract
-
-1. **Compile the smart contract:**
-
+2. **Compile the contract:**
    ```bash
    npx hardhat compile
    ```
 
-2. **Deploy the smart contract to zkSync:**
+### Step 4: Write Deployment Script
 
-   ```bash
-   npx hardhat run scripts/deploy.js --network zksync
+1. **Create deployment script:**
+
+   Create a file named `deploy.ts` under the `scripts` directory:
+   ```typescript
+   import { Wallet, Provider, utils } from "zksync-web3";
+   import { ethers } from "hardhat";
+   import * as dotenv from "dotenv";
+
+   dotenv.config();
+
+   const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
+
+   if (!PRIVATE_KEY) {
+     throw new Error("Please set your PRIVATE_KEY in a .env file");
+   }
+
+   async function main() {
+     const provider = new Provider("https://testnet.era.zksync.dev");
+     const wallet = new Wallet(PRIVATE_KEY, provider);
+
+     const factory = await ethers.getContractFactory("MyNFT", wallet);
+     const nft = await factory.deploy();
+
+     await nft.deployed();
+
+     console.log(`NFT deployed to: ${nft.address}`);
+   }
+
+   main().catch((error) => {
+     console.error(error);
+     process.exit(1);
+   });
    ```
 
-   Make sure to replace `YOUR_PRIVATE_KEY` and `YOUR_CONTRACT_ADDRESS` with your actual private key and deployed contract address in the `interact.js` script.
+### Step 5: Deploy the Contract
 
-### Step 7: Interact with the Deployed Contract
-
-1. **Run the interaction script:**
-
-   ```bash
-   npx hardhat run scripts/interact.js --network zksync
+1. **Create a `.env` file:**
+   ```
+   PRIVATE_KEY=your_private_key_here
    ```
 
-   This will mint a new NFT to the address associated with your private key and display the total number of NFTs minted.
-
-### Step 8: Add Documentation
-
-Create a `README.md` file to document your project:
-
-```markdown
-# zkSync NFT Deployment Guide
-
-## Introduction
-
-This repository contains a step-by-step guide to deploying a Non-Fungible Token (NFT) on zkSync, a Layer 2 scaling solution for Ethereum.
-
-
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js
-- MetaMask
-
-### Installation
-
-1. Clone the repository:
+2. **Deploy the contract:**
    ```bash
-   git clone https://github.com/yourusername/zkSync-NFT.git
-   cd zkSync-NFT
+   npx hardhat run scripts/deploy.ts --network zkSyncTestnet
    ```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+If everything is set up correctly, you should see the address of your deployed NFT contract on zkSync Era.
 
-3. Configure zkSync network in MetaMask:
-   - Network Name: zkSync
-   - New RPC URL: `https://rpc.zksync.io`
-   - Chain ID: 280
-   - Currency Symbol: ETH
-   - Block Explorer URL: `https://zkscan.io`
+### Step 6: Interact with Your Contract
 
-### Compilation
+You can now interact with your deployed NFT contract using ethers.js. You might also want to add functions in your deployment script to mint new NFTs, transfer them, etc.
 
-```bash
-npx hardhat compile
-```
+1. Verify that the Goerli network has enough testnet ETH for your private key.
+2. If necessary, Goerli ETH can be obtained through a faucet.
 
-### Deployment
-
-Replace `YOUR_PRIVATE_KEY` in `scripts/interact.js` with your MetaMask private key.
-
-```bash
-npx hardhat run scripts/deploy.js --network zksync
-```
-
-### Interaction
-
-Replace `YOUR_CONTRACT_ADDRESS` in `scripts/interact.js` with the deployed contract address.
-
-```bash
-npx hardhat run scripts/interact.js --network zksync
-```
-
-## Conclusion
-
-By following this guide, you can deploy and interact with an NFT smart contract on zkSync, taking advantage of its scalability and low transaction costs.
-
-### Resources
-
-- [zkSync Documentation](https://zksync.io/docs/)
-- [zkSync GitHub](https://github.com/matter-labs/zksync)
-- [zkSync Community](https://community.zksync.io/)
-
-Happy building on zkSync!
-```
-
----
-
-This documentation provides a comprehensive guide for setting up, deploying, and interacting with an NFT smart contract on zkSync. It includes all the necessary steps, code snippets, and configuration details to help developers get started quickly and efficiently.
+Using this approach should make deploying an NFT on zkSync Era easier. Verify your configurations and the versions of the libraries you're using again if you run into any problems.
