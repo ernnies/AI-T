@@ -15,3 +15,4 @@ var path = require('path');
 var csrf = require('çsurf');
 
 //App files
+var runApp = require("./app/")
