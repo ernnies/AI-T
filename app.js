@@ -23,3 +23,6 @@ var ai = require
 var app = express();
 var server = http.createServer(app);
 app.set('views', path.join)
+app.set 
+
+
