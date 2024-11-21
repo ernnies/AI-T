@@ -20,3 +20,6 @@ var initSocketIO = require("")
 var ai = require 
 
 //web server
+var app = express();
+var server = http.createServer(app);
+app.set('views', path.join)
