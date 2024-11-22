@@ -30,4 +30,3 @@ Select "Create a basic sample project."
    ```typescript
    import { HardhatUserConfig } from "hardhat/types";
    import "@nomiclabs/hardhat-ethers";
-   import "@matterlabs/hardhat-zksync-deploy";
