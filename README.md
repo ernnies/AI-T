@@ -16,8 +16,7 @@ This guide assumes you have some basic knowledge of using Hardhat and Solidity.
    npm install --save-dev hardhat
    npm install --save-dev @nomiclabs/hardhat-ethers ethers
    npm install --save-dev @matterlabs/hardhat-zksync-solc
-   npm install --save-dev dotenv
-   ```
+   npm install
 
 3. **Create a Hardhat project:**
    ```bash
