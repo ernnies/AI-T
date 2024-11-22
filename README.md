@@ -78,5 +78,4 @@ Select "Create a basic sample project."
        }
 
        function createNFT(address to) public onlyOwner returns (uint256) {
-           uint256 newTokenId = tokenCounter;
-           _safeMint(to, newTokenId);
+           uint256 newTokenId = tokenCoun
