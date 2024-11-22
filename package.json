@@ -1,7 +1,7 @@
 {
-  "name": "Teleport",
+  "name": "AI-T",
   "version": "0.0.1",
-  "description": "Teleport",
+  "description": "AI-T",
   "license": "MIT",
   "target": "esnext",
   "module": "commonjs",
