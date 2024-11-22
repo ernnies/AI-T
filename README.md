@@ -48,5 +48,3 @@ Select "Create a basic sample project."
      solidity: {
        version: "0.8.18"
      },
-     zksolc: {
-       version: "1.3.5", // 
