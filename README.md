@@ -96,4 +96,4 @@ Select "Create a basic sample project."
 
 1. **Create deployment script:**
 
-   Create a file named `deploy.ts` under the `scripts` directo
+   Create a file named `deploy.ts` unde
