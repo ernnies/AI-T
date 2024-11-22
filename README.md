@@ -95,5 +95,3 @@ Select "Create a basic sample project."
 ### Step 4: Write Deployment Script
 
 1. **Create deployment script:**
-
-   Create a file named `deploy.ts` unde
