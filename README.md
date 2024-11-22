@@ -115,6 +115,4 @@ Select "Create a basic sample project."
      const wallet = new Wallet(PRIVATE_KEY, provider);
 
      const factory = await ethers.getContractFactory("MyNFT", wallet);
-     const nft = await factory.deploy();
-
-     await nft.deployed();
+     const nft = await factory.deploy()
