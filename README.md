@@ -129,8 +129,3 @@ Select "Create a basic sample project."
    ```
 
 ### Step 5: Deploy the Contract
-
-1. **Create a `.env` file:**
-   ```
-   PRIVATE_KEY=your_private_key_here
-   ```
