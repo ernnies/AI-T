@@ -134,8 +134,3 @@ Select "Create a basic sample project."
    ```
    PRIVATE_KEY=your_private_key_here
    ```
-
-2. **Deploy the contract:**
-   ```bash
-   npx hardhat run scripts/deploy.ts --network zkSyncTestnet
-   ```
