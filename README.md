@@ -109,5 +109,3 @@ Select "Create a basic sample project."
    if (!PRIVATE_KEY) {
      throw new Error("Please set your PRIVATE_KEY in a .env file");
    }
-
-   async function main() {
