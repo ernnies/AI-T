@@ -112,4 +112,3 @@ Select "Create a basic sample project."
 
    async function main() {
      const provider = new Provider("https://testnet.era.zksync.dev");
-     const wallet = new Wallet(PRIVATE_KEY, provider);
