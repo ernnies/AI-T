@@ -58,4 +58,3 @@ Select "Create a basic sample project."
    export default config;
    ```
 
-### Step 3: Write the NFT Smart Contract
