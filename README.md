@@ -118,6 +118,3 @@ Select "Create a basic sample project."
      const nft = await factory.deploy();
 
      await nft.deployed();
-
-     console.log(`NFT deployed to: ${nft.address}`);
-   }
