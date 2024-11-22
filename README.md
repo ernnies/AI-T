@@ -67,4 +67,3 @@ Select "Create a basic sample project."
    // SPDX-License-Identifier: MIT
    pragma solidity ^0.8.0;
 
-   import "@openzeppelin/contracts/token/ERC721
