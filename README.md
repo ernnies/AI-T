@@ -70,5 +70,4 @@ Select "Create a basic sample project."
    import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
    import "@openzeppelin/contracts/access/Ownable.sol";
 
-   contract MyNFT is ERC721, Ownable {
-       uint256 public tokenCounter;
+   contract MyNFT is ERC721, Ownable
