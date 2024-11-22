@@ -76,5 +76,3 @@ Select "Create a basic sample project."
        constructor() ERC721("MyNFT", "NFT") {
            tokenCounter = 0;
        }
-
-       function createNFT(address to) public
