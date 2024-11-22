@@ -144,4 +144,4 @@ If everything is set up correctly, you should see the address of your deployed N
 
 ### Step 6: Interact with Your Contract
 
-You can now interact with your deployed NFT contract using ethers.js. You might also want to add functions in your deployment script to mint new NFTs, transfer them, etc.
+You can now interact with your deployed NFT contract using ethers.js. You might also want to add functions in your deployment script to mint new 
