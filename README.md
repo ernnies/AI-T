@@ -99,4 +99,3 @@ Select "Create a basic sample project."
    Create a file named `deploy.ts` under the `scripts` directory:
    ```typescript
    import { Wallet, Provider, utils } from "zksync-web3";
-   import { ethers } from "hardhat";
