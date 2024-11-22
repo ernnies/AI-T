@@ -46,5 +46,3 @@ Select "Create a basic sample project."
        }
      },
      solidity: {
-       version: "0.8.18"
-     },
