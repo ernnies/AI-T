@@ -26,5 +26,4 @@ Select "Create a basic sample project."
 
 ### Step 2: Configure Hardhat for zkSync
 
-1. **`hardhat.config.ts`:**
-   ```typescript
+1. **`hardhat.config.ts`:
