@@ -103,5 +103,3 @@ Select "Create a basic sample project."
    import * as dotenv from "dotenv";
 
    dotenv.config();
-
-   const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
