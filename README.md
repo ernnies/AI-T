@@ -148,5 +148,3 @@ You can now interact with your deployed NFT contract using ethers.js. You might 
 
 1. Verify that the Goerli network has enough testnet ETH for your private key.
 2. If necessary, Goerli ETH can be obtained through a faucet.
-
-Using this approach should make deploying an NFT on zkSync Era easier. Verify your configurations and the versions of the libraries you're using again if you run into any problems.
