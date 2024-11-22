@@ -32,5 +32,3 @@ Select "Create a basic sample project."
    import "@nomiclabs/hardhat-ethers";
    import "@matterlabs/hardhat-zksync-deploy";
    import "@matterlabs/hardhat-zksync-solc";
-   import * as dotenv from "dotenv";
-
