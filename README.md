@@ -29,4 +29,3 @@ Select "Create a basic sample project."
 1. **`hardhat.config.ts`:**
    ```typescript
    import { HardhatUserConfig } from "hardhat/types";
-   import "@nomiclabs/hardhat-ethers";
