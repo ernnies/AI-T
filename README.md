@@ -105,7 +105,3 @@ Select "Create a basic sample project."
    dotenv.config();
 
    const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
-
-   if (!PRIVATE_KEY) {
-     throw new Error("Please set your PRIVATE_KEY in a .env file");
-   }
