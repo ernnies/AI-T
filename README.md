@@ -81,7 +81,4 @@ Select "Create a basic sample project."
            uint256 newTokenId = tokenCounter;
            _safeMint(to, newTokenId);
            tokenCounter++;
-           return newTokenId;
-       }
-   }
-   ```
+           return
