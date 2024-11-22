@@ -61,5 +61,3 @@ Select "Create a basic sample project."
 ### Step 3: Write the NFT Smart Contract
 
 1. **Create the NFT contract:**
-
-   Create a file named `NFT.sol` under the `
