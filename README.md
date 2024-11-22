@@ -91,5 +91,3 @@ Select "Create a basic sample project."
    ```bash
    npx hardhat compile
    ```
-
-### Step 4: Write Deployment Script
