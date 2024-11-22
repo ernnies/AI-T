@@ -86,5 +86,3 @@ Select "Create a basic sample project."
        }
    }
    ```
-
-2. **Compile the contract:*
