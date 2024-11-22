@@ -34,4 +34,3 @@ Select "Create a basic sample project."
    import "@matterlabs/hardhat-zksync-solc";
    import * as dotenv from "dotenv";
 
-   dotenv.config();
