@@ -35,12 +35,3 @@ Select "Create a basic sample project."
    import * as dotenv from "dotenv";
 
    dotenv.config();
-
-   const config: HardhatUserConfig = {
-     defaultNetwork: "zkSyncTestnet",
-     networks: {
-       zkSyncTestnet: {
-         url: "https://testnet.era.zksync.dev",
-         ethNetwork: "https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID", // Goerli testnet
-         zksync: true
-       }
