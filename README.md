@@ -64,6 +64,3 @@ Select "Create a basic sample project."
 
    Create a file named `NFT.sol` under the `contracts` directory:
    ```solidity
-   // SPDX-License-Identifier: MIT
-   pragma solidity ^0.8.0;
-
