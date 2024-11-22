@@ -139,5 +139,3 @@ Select "Create a basic sample project."
    ```bash
    npx hardhat run scripts/deploy.ts --network zkSyncTestnet
    ```
-
-If everything is set up correctly, you should see the address of your deployed NFT contract on zkSync Era.
