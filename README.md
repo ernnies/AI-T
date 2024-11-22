@@ -25,5 +25,3 @@ This guide assumes you have some basic knowledge of using Hardhat and Solidity.
 Select "Create a basic sample project."
 
 ### Step 2: Configure Hardhat for zkSync
-
-1. **`hardhat.config.ts`:
