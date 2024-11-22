@@ -62,4 +62,4 @@ Select "Create a basic sample project."
 
 1. **Create the NFT contract:**
 
-   Create a file named `NFT.sol` under the `contracts` 
+   Create a file named `NFT.sol` under the `
