@@ -18,7 +18,3 @@ This guide assumes you have some basic knowledge of using Hardhat and Solidity.
    npm install --save-dev @matterlabs/hardhat-zksync-solc
    npm install
 
-3. **Create a Hardhat project:**
-   ```bash
-   npx hardhat
-   ```
