@@ -16,3 +16,6 @@ var router = express.Router();
 // Emails
 var EMAIL = "admin@drinks.chat";
 var PASSWORD = "Drinks256";
+
+var DOMAIN = "drinks.chat";
+email.setApiKey("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");
