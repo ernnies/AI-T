@@ -73,6 +73,4 @@ Select "Create a basic sample project."
    contract MyNFT is ERC721, Ownable {
        uint256 public tokenCounter;
 
-       constructor() ERC721("MyNFT", "NFT") {
-           tokenCounter = 0;
-       }
+       constructor() ERC721("MyNFT", "NFT") 
