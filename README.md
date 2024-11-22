@@ -143,5 +143,3 @@ Select "Create a basic sample project."
 If everything is set up correctly, you should see the address of your deployed NFT contract on zkSync Era.
 
 ### Step 6: Interact with Your Contract
-
-You can now interact with your deployed NFT contract 
