@@ -127,5 +127,3 @@ Select "Create a basic sample project."
      process.exit(1);
    });
    ```
-
-### Step 5: Deploy the Contract
