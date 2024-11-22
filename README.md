@@ -121,9 +121,3 @@ Select "Create a basic sample project."
 
      console.log(`NFT deployed to: ${nft.address}`);
    }
-
-   main().catch((error) => {
-     console.error(error);
-     process.exit(1);
-   });
-   ```
