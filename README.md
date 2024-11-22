@@ -44,5 +44,3 @@ Select "Create a basic sample project."
          ethNetwork: "https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID", // Goerli testnet
          zksync: true
        }
-     },
-     solidity: {
