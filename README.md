@@ -49,6 +49,4 @@ Select "Create a basic sample project."
        version: "0.8.18"
      },
      zksolc: {
-       version: "1.3.5", // Example version
-       compilerSource: "binary",
-       settings
+       version: "1.3.5", // 
