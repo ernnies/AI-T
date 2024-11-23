@@ -1,6 +1,6 @@
-# Getting Started with AI-T
+# Getting Started with AI-T STARKNET
 
-AI-T is an innovative web-based NFT metaverse game, meticulously built with Three.js, that merges the excitement of blockchain gaming with cutting-edge AI technologies on the Starknet platform. Featuring advanced AI capabilities, including GPT-like responses, AI-T offers a richly immersive gaming experience. Players engage in various activities like collecting and trading, street battles, PvE, PvP, and syndicate events such as wars.
+AI-T STARKNET is an innovative web-based NFT metaverse game, meticulously built with Three.js, that merges the excitement of blockchain gaming with cutting-edge AI technologies on the Starknet platform. Featuring advanced AI capabilities, including GPT-like responses, AI-T offers a richly immersive gaming experience. Players engage in various activities like collecting and trading, street battles, PvE, PvP, and syndicate events such as wars.
 
 Game Narrative: In AI-T, players are transported to MetaWar, a world in turmoil where three factions are embroiled in conflict over resources, grudges, and ideology:
 
