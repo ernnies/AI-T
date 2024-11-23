@@ -1,22 +1,25 @@
-# Getting Started with MetaWar
+# Getting Started with AI-T
 
-MetaWar is a play-and-earn web based NFT metaverse game with a full three.js built in. Through a variety of collecting and trading features, street battles, PvE, PvP, and syndicate events such as wars, MetaWar aims to provide a source of amusement for both casual players and diehard DeFi aficionados.
+AI-T is an innovative web-based NFT metaverse game, meticulously built with Three.js, that merges the excitement of blockchain gaming with cutting-edge AI technologies on the Starknet platform. Featuring advanced AI capabilities, including GPT-like responses, AI-T offers a richly immersive gaming experience. Players engage in various activities like collecting and trading, street battles, PvE, PvP, and syndicate events such as wars.
 
-Three factions in great turmoil, thrust into war over resources, grudges, and ideology in our MetaWar.
+Game Narrative: In AI-T, players are transported to MetaWar, a world in turmoil where three factions are embroiled in conflict over resources, grudges, and ideology:
 
-The overzealous Super Empire, a wealthy nation obsessed with body-modification, faith, and purity.
-Econo, a hyper industrial republic, run by gleeful, brutish engineers who always honor their word.
-And Peace, a massive tree that stretches into the heavens, inhabited by what appears to be a peace-loving down-to-earth society of naturalists.
+Super Empire: A wealthy nation fixated on body modification, faith, and purity.
+Econo: A hyper-industrial republic run by gleeful, brutish engineers who always keep their word.
+Peace: A massive tree reaching into the heavens, home to a peace-loving society of naturalists.
+The Sundering scattered powerful gems known as cyberstones across Eld, unleashing corrupt beings from the Abyss. Forced to retreat to their capitals, the factions united to face this existential threat. This alliance led to the creation of CyberPersons, powerful robot units powered by cyberstones, forming the last line of defense against the Abyss, commanded by remote expert Pilots in teams of four.
 
-“Whoever fights monsters should see to it that in the process he does not become a monster. And if you gaze long enough into an abyss, the abyss will gaze into itself.”
+AI and Blockchain Integration: AI-T not only entertains but also serves as a learning platform, emphasizing the integration of AI and blockchain. Players will experience GPT-like AI interactions and responses, making the game environment highly dynamic and intelligent. By utilizing Cairo, a high-level language that compiles into provable programs, participants will embark on various Cairo Quests, such as Thinking in Cairo, Sparring Sorcerers, and Puzzling Pyramids, to master the tools required for building AI-enabled dApps.
 
-The Sundering had begun.
-During this brief moment, the powerful gems that became known as cyberstones spread across the plane of Eld.
-With them came the corrupt beings and aberrations of the Abyss that quickly unleashed turmoil upon Eld, multiplying the agony of its inhabitants.
-Forced to abandon their lands to great despair, they withdrew to the capitals of Econo, Peace and Super Empire.
-Compelled to place deep-seated generational hatred aside, the long-sworn enemies reluctantly came together to fight this chiefest of all calamities. The leaders of each faction solemnly swore to try and set aside their endless war to face off against the existential threat of the Abyss.
-This union resulted in the creation of the CyberPersons, mighty robot units powered by cyberstones with a single purpose: forming the last line of defense the capitals have to push back the primordial forces unleashed by the Abyss.
-Commanded by remote expert Pilots in teams of four, CyberPersons are the ultimate weapon of war.
+Track Challenges: Participants are encouraged to delve into the intersections between AI and blockchain through challenges like:
+
+Developing machine learning models to analyze blockchain data.
+Designing AI solutions to detect Sybil attacks in airdrops.
+Creating models to identify vulnerabilities in smart contracts.
+Leveraging blockchain data to train specialized AI agents.
+Building development-support tools for the Starknet ecosystem.
+Innovating with real-world applications, unique integrations, and creative use cases.
+
 
 ## Instruction
 
