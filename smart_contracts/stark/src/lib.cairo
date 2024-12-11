@@ -60,14 +60,9 @@ mod LiquidationPrediction {
                 predicted_liquidation_date
             };
 
-            // Efficiently append the new prediction to the caller's list of predictions
             self.predictions.entry(caller).append().write(prediction);
-
-            // Increment the prediction counter
             self.prediction_counter += 1;
-            
-            // Return the updated prediction counter
-            return self.prediction_counter;
+            self.prediction_counter
         }
     }
 }

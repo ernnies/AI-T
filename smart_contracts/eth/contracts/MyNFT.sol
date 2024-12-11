@@ -11,10 +11,8 @@ contract MyNFT is ERC721, Ownable {
         tokenCounter = 0;
     }
 
-    function createNFT(address to) public onlyOwner returns (uint256) {
-        uint256 newTokenId = tokenCounter;
-        _safeMint(to, newTokenId);
-        tokenCounter++;
-        return newTokenId;
+    function createNFT(address to) external onlyOwner returns (uint256) {
+        _safeMint(to, tokenCounter);
+        return tokenCounter++;
     }
 }
