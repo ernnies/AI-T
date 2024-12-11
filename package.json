@@ -31,7 +31,8 @@
     "passport-magic-link": "^2.1.0",
     "request": "^2.88.2",
     "socket.io": "^2.0.4",
-    "sqlite3": "^5.1.2"
+    "sqlite3": "^5.1.2",
+    "vercel": "^39.2.0"
   },
   "scripts": {
     "start": "nodemon app.js",
